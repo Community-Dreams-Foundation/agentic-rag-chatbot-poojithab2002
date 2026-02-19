@@ -46,9 +46,9 @@ You may implement one feature or multiple. Partial implementations are acceptabl
 ---
 
 ## Participant Info (Required)
-- Full Name:
-- Email:
-- GitHub Username:
+- Full Name: Poojitha Bagam
+- Email: poojithabagam27@gmail.com
+- GitHub Username: [poojithab2002](https://github.com/poojithab2002)
 
 ---
 
@@ -246,9 +246,34 @@ Provide exact commands a judge can run.
 Example (replace with your real commands):
 
 ```text
+
 # install dependencies
+python -m venv .venv
+
+# Activate virtual environment
+.venv\Scripts\activate
+
+pip install -r requirements.txt
+
 # run the app
+# Ingest documents (place files inside sample_docs/ first)
+python -m app.cli ingest
+
+# Ask a question (RAG with citations)
+python -m app.cli ask "pdf"
+
 # open UI or run CLI
+
+# This project is CLI-based.
+# Run the required judge command:
+make sanity
+
+# This generates:
+# artifacts/sanity_output.json
+
+# Optional manual validation:
+python scripts/verify_output.py artifacts/sanity_output.json
+
 ```
 
 ---
